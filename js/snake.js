@@ -31,23 +31,6 @@ export default class Snake {
             this.keydown(e);
         });
     }
-
-    drawSquares() {
-        let squaresWidth = this.scene.game.config.width / (this.tileSize );
-        let squaresHeight = this.scene.game.config.height / (this.tileSize);
-
-        for(let w = 0; w < squaresWidth; ++w) {
-            for(let h = 0; h < squaresHeight; ++h) {
-                let color = (w + h) % 2 == 0 ? 0x609F60 : 0x708F70;
-                this.scene.add.rectangle(
-                    w * this.tileSize,
-                    h * this.tileSize,
-                    this.tileSize, this.tileSize,
-                    color
-                ).setOrigin(0)
-            }
-        }
-    }
     
     placeApple() {
         this.apple.x = 
